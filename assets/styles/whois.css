@@ -1,0 +1,221 @@
+.whois-toggle {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid var(--primary-color);
+    border-right: none;
+    border-radius: 8px 0 0 8px;
+    padding: 10px 8px;
+    cursor: pointer;
+    z-index: 1002;
+    transition: all 0.3s ease;
+    box-shadow: -5px 0 15px rgba(255, 140, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.whois-toggle:hover {
+    background: rgba(255, 140, 0, 0.1);
+    box-shadow: -10px 0 20px rgba(255, 140, 0, 0.5);
+}
+
+.whois-toggle-text {
+    color: var(--primary-color);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px var(--primary-color);
+}
+
+.whois-toggle i {
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.whois-toggle.active {
+    background: rgba(255, 140, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.whois-panel {
+    position: fixed;
+    right: -400px;
+    top: 0;
+    width: 400px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    border-left: 2px solid var(--primary-color);
+    z-index: 1001;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+    backdrop-filter: blur(10px);
+}
+
+.whois-panel.active {
+    right: 0;
+}
+
+.whois-header {
+    padding: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.whois-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-shadow: var(--text-shadow);
+}
+
+.whois-close,
+.whois-button {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.whois-close {
+    padding: 0.5rem 1rem;
+}
+
+.whois-close:hover,
+.whois-button:hover {
+    background: var(--primary-color);
+    color: #000;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+.whois-content {
+    padding: 2rem;
+}
+
+.whois-input-group {
+    margin-bottom: 2rem;
+}
+
+.whois-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.whois-input {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    color: var(--primary-color);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.whois-input:focus {
+    outline: none;
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+    border-color: #fff;
+}
+
+.whois-input::placeholder {
+    color: rgba(255, 140, 0, 0.5);
+}
+
+.whois-button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.whois-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.whois-results {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.whois-results h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px var(--primary-color);
+}
+
+.whois-field {
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 140, 0, 0.1);
+}
+
+.whois-field:last-child {
+    border-bottom: none;
+}
+
+.whois-field-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.whois-field-value {
+    color: rgba(255, 140, 0, 0.8);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    word-break: break-all;
+}
+
+.whois-array {
+    margin-left: 1rem;
+}
+
+.whois-array-item {
+    color: rgba(255, 140, 0, 0.7);
+    font-size: 0.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.whois-loading {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 1rem;
+    padding: 2rem;
+}
+
+.whois-error {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    color: #ff6b6b;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
