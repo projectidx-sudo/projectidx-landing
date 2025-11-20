@@ -253,7 +253,6 @@
     }
 }
 
-/* Thêm CSS để hiển thị video theo hàng ngang */
 #for-you .tiktok-videos-container {
     display: flex;
     flex-wrap: wrap;

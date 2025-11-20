@@ -8,6 +8,7 @@ import { initSkillsAnimation } from './features/skillsAnimation.js';
 import { initServicesAnimation } from './features/servicesAnimation.js';
 import { initInspirationalQuote } from './features/quoteAnimation.js';
 import { initPreloader } from './features/preloader.js';
+import { initAudioManager } from './features/audioManager.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
     const preloader = initPreloader();
@@ -34,6 +35,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     initSkillsAnimation(performanceSettings);
     initServicesAnimation(performanceSettings);
     initInspirationalQuote(performanceSettings);
+    preloader.setStatus('Initializing audio', 88);
+    initAudioManager();
     preloader.setStatus('Launch complete', 92);
     preloader.markComplete();
 });

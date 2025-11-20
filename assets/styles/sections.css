@@ -306,7 +306,6 @@
     width: 100%;
 }
 
-/* Services Section Styles */
 #services .section-title {
     background: linear-gradient(to right, #ff8c00, #ff6600, #ff8c00);
     background-size: 200% auto;
@@ -541,7 +540,6 @@
     }
 }
 
-/* Inspirational Quote Styles */
 .inspirational-quote {
     max-width: 800px;
     margin: 3rem auto 0;
@@ -656,7 +654,6 @@
     }
 }
 
-/* Add glitch effect to the quote */
 .inspirational-quote:hover .quote-text {
     animation: quoteGlitch 0.5s infinite alternate;
 }

@@ -21,7 +21,7 @@ async function loadBatch() {
             placeholder.outerHTML = html;
         } catch (error) {
             console.error(error);
-            placeholder.innerHTML = '<!-- Failed to load component -->';
+            placeholder.innerHTML = '';
             placeholder.removeAttribute('data-component-src');
             placeholder.removeAttribute('data-component');
             placeholder.removeAttribute('data-src');
@@ -33,6 +33,5 @@ async function loadBatch() {
 
 export async function loadComponents() {
     while (await loadBatch()) {
-        // Keep loading until no more placeholders remain.
     }
 }
